@@ -1,0 +1,74 @@
+.calendar {
+
+    .fc {
+        .fc-header-toolbar {
+            padding: 20px 0px;
+            background-color: $color-black;
+            color: $main-color;
+            margin: 0px;
+            padding: 2rem 10rem;
+            @media only screen and (max-width: 900px) {
+                padding: 2rem 0rem;
+            }
+
+            
+            h2 {
+                margin: 0px;
+            }
+
+            .fc-button-primary {
+                background-color: $main-color;
+                color: $color-black;
+                outline: none;
+
+                &:disabled {
+                    background-color: $color-black;
+                    color: $main-color;
+                    border: solid 2px $main-color;
+                }
+
+                &:focus {
+                    outline: 0;
+                }
+            }
+        }
+
+        .fc-view-harness {
+            margin: 2rem 0px;
+            border: none;
+
+            .fc-scrollgrid {
+                border: none;
+            }
+
+            .fc-col-header {
+                margin-bottom: 5px;
+                
+                a {
+                    text-decoration: none;
+                    color: $color-black;
+                    width: 90%;
+                    padding: .5rem 0;
+                    background-color: $main-color;
+                    border-radius: 8px;
+
+                    &:hover {
+                        background-color: $color-black;
+                        color: $main-color;
+                        transition: $transition;
+                    }
+                }
+
+                th {
+                    border: none;
+                }
+            }
+
+            .fc-scroller-harness {
+                .fc-daygrid-day {
+                    border: none;
+                }
+            }
+        }
+    }
+}

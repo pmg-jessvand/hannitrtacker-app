@@ -1,0 +1,11 @@
+.clients-page {
+    .row {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1rem;
+
+        .client-detail-col {
+            margin-bottom: 20px;
+        }
+    }
+}

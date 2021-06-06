@@ -1,0 +1,13 @@
+.backlink {
+    text-decoration: none;
+    color: $color-black;
+    font-weight: 300;
+    margin: 2rem 0;
+    padding-bottom: .5rem;
+    // border: solid 2px red;
+
+    &:hover {
+        border-bottom: solid 1px $color-black;
+        color: $color-black;
+    }
+}

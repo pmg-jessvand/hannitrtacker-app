@@ -1,0 +1,39 @@
+.overview {
+    .title-row {
+        h3 {
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+    }
+
+    a {
+        text-decoration: none;
+
+        .overview-item {
+            
+            .item-col {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                
+    
+                p {
+                    margin: 0px;
+                    padding: 24px 0px;
+                    color: $color-black;
+                    border: none;
+                }
+            }
+        }
+
+        &:hover {
+            .overview-item {
+                background-color: $color-grey;
+                transition: $transition;
+            }
+        }
+
+    }
+    
+}

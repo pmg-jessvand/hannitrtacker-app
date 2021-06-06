@@ -1,0 +1,13 @@
+.client-info-wrapper {
+    width: 100%;
+
+    .client-info {
+        display: flex;
+        justify-content: space-between;
+
+        &-label {
+            font-weight: 700;
+            padding-right: 10px;
+        }
+    }
+}
