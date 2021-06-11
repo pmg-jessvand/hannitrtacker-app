@@ -1,27 +1,24 @@
 .fc-daygrid-event-harness {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 8px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem 0;
 
+    .event-card {
+        width: 80%;
+        cursor: pointer;
+        padding: 1rem .5rem;
+        
+        .event-client {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
 
-    a {
-       width: 80%;
-       text-decoration: none;
-       border: none;
-
-       .event-card-link {
-
-           .event-card {
-               padding: 20px 10px;
-    
-               p {
-                   color: $color-black;
-                   margin: 0px;
-               }
-           }
-
-       }
+        p {
+            word-break: normal;
+            width: 100%;
+            white-space: pre-line;
+            margin: 0px;
+        }
 
     }
 }

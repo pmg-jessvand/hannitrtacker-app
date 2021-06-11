@@ -14,6 +14,7 @@ function App() {
 
   const client = new ApolloClient({
     uri: 'http://localhost/hannitracker/web/graphql/',
+    // uri: 'https://dev-hannitracker.pantheonsite.io/graphql/',
     cache: new InMemoryCache()
   });
 

@@ -1,6 +1,7 @@
 @import "./header.scss";
 @import "./page-header.scss";
 @import "./backlink.scss";
+@import "./stopwatch.scss";
 
 // Calendar
 @import "./calendar/calendar.scss";
@@ -12,4 +13,5 @@
 // Lists
 @import "./lists/overview.scss";
 @import "./lists/project-list.scss";
-@import "./lists//separator.scss";
+@import "./lists/separator.scss";
+@import "./lists/tasklist.scss";

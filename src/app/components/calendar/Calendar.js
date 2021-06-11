@@ -6,10 +6,10 @@ import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 
-const CalendarComponent = () => {
+const CalendarComponent = ({ eventData }) => {
 
   const handleEventClick = (eventInfo) => {
-    // console.log(eventInfo.event.extendedProps);
+    window.location.href=eventInfo.event.extendedProps.slug;
   }
 
   const handleNavClick = (info) => {
@@ -18,7 +18,10 @@ const CalendarComponent = () => {
 
   const renderEventContent = (eventContent) => {
     return (
-      <EventCard id={eventContent.event._def.defId} title={eventContent.event.title} />
+      <EventCard
+      id={eventContent.event._def.defId}
+      title={eventContent.event.title}
+      klant={eventContent.event.extendedProps.klant}/>
     );
   }
 
@@ -34,10 +37,7 @@ const CalendarComponent = () => {
         locale="be"
         navLinks={true}
         navLinkDayClick={handleNavClick}
-        events={[
-          { title: 'event 1', date: '2021-06-03', allDay: true, slug: 'event-1', backgroundColor: 'red' },
-          { title: 'event 1', date: '2021-06-03', allDay: true, slug: 'event-3', backgroundColor: 'red' },
-        ]}
+        events={eventData}
         eventClick={handleEventClick}
         eventContent={renderEventContent}
       />

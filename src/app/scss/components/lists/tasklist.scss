@@ -1,0 +1,16 @@
+.tasks-wrapper {
+    padding: 2rem 0;
+
+    .task-item {
+        display: flex;
+        
+        i {
+            margin-right: 1.5rem;
+            font-size: 20px;
+        }
+
+        p {
+            font-weight: 700;
+        }
+    }
+}

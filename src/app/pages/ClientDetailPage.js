@@ -45,7 +45,7 @@ const ClientsDetailPage = ({match: {params} }) => {
       <div className="page clients-page">
         <PageHeader title={nodeById.title} />
         <div className="container">
-          <Link to={Routes.CLIENTS} className="backlink" >Terug</Link>
+          <Link to={Routes.CLIENTS} className="backlink" ><i className="fas fa-arrow-circle-left"></i></Link>
           {data ?
             <div className="row">
               <div className="col-12 col-md-12 col-lg-5 col-xl-5 client-detail-col">

@@ -1,16 +1,13 @@
 import React from 'react'
 // Component Imports
-import { Separator, ProjectListItem } from '../../components'
+import { ProjectListItem } from '../../components'
 
 const Overview = ({ listdata }) => {
 
   return (
     <>
       { listdata ? listdata.map(listItem => (
-      <div key={listItem.entity.uuid} className="project-list">
-        <ProjectListItem title={listItem.entity.title} id={listItem.entity.entityId} uuid={listItem.entity.uuid} />
-        <Separator height="1px"/>
-      </div>
+        <ProjectListItem key={listItem.entity.uuid} title={listItem.entity.title} slug={`/projecten/${listItem.entity.uuid}`} uuid={listItem.entity.uuid} />
       ))
       : null
       }

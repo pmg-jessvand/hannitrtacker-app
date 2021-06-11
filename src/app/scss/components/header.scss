@@ -21,34 +21,76 @@
                 }
             }
 
-            nav {
+            .desktop-navigation {
                 width: 100%;
-                height: 100%;
+                @media only screen and (max-width: 990px) {
+                    display: none;
+                }
 
                 ul {
-                    display: flex;
                     list-style: none;
+                    display: flex;
                     align-items: center;
-                    height: 100%;
-                    padding: 0px;
-                    padding: margin 0px;
+                    margin: 0px;
+                    justify-content: flex-end;
 
                     li {
-                        padding-right: 2rem;
+                        margin-left: 2rem;
 
                         a {
-                            font-family: 'Roboto';
-                            text-transform: uppercase;
+                            font-size: 24px;
                             font-weight: 700;
                             text-decoration: none;
+                            text-transform: uppercase;
                             color: $color-white;
-                            padding-bottom: 10px;
+                            padding-bottom: 5px;
                             border-bottom: solid 2px $main-color;
 
                             &:hover {
                                 border-bottom: solid 2px $color-white;
                                 transition: $transition;
                             }
+                        }
+                    }
+                }
+            }
+
+            .mobile-navigation {
+                background-color: $main-color;
+                position: absolute;
+                top: 150px;
+                right: 0px;
+                height: 80vh;
+                z-index: 99;
+                display: none;
+                @media only screen and (max-width: 990px) {
+                    display: flex;
+                }
+
+                .burger {
+                    display: flex;
+                    position: absolute;
+                    top: -90px;
+                    right: 15px;
+                    font-size: 32px;
+                    color: $color-white;
+                }
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    list-style: none;                    
+                    align-items: flex-end;
+
+                    li {
+                        padding: 10%;
+
+                        a {
+                            text-decoration: none;
+                            color: $color-white;
+                            font-size: 24px;
+                            font-weight: 700;
+                            text-transform: uppercase;
                         }
                     }
                 }

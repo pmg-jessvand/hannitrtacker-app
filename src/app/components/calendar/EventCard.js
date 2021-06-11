@@ -1,14 +1,13 @@
 import React from 'react'
 
-import { Link } from 'react-router-dom'
-
-const EventCard = ({ title, id }) => {
+const EventCard = ({ title, klant }) => {
   return (
-    <Link className="event-card-link" to={`/opdrachten/${id}`}>
+    // <Link className="event-card-link" to={`/opdrachten/${id}`}>
       <div className="event-card">
+        <p className="event-client">{klant}</p>
         <p>{title}</p>
       </div>
-    </Link> 
+    // </Link> 
   )
 }
 

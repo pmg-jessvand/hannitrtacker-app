@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Navigation } from '../components';
+import { MobileNavigation, DesktopNavigation } from '../components';
 import * as Routes from '../routes';
 
 import Logo from '../images/ht-logo-horizontal.svg';
@@ -21,7 +21,8 @@ const Header = () => {
               </div>
             </div>
             <div className="col-6 col-md-6 col-lg-9 col-xl-9 header-col">
-              <Navigation />
+              <MobileNavigation />
+              <DesktopNavigation />
             </div>
           </div>
         </div>
