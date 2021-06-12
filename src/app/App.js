@@ -13,8 +13,8 @@ import * as Routes from './routes';
 function App() {
 
   const client = new ApolloClient({
-    uri: 'http://localhost/hannitracker/web/graphql/',
-    // uri: 'https://dev-hannitracker.pantheonsite.io/graphql/',
+    // uri: 'http://localhost/hannitracker/web/graphql/',
+    uri: 'https://dev-hannitracker.pantheonsite.io/graphql/',
     cache: new InMemoryCache()
   });
 

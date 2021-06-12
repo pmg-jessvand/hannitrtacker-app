@@ -26,7 +26,7 @@ const ProjectDetailPage = ({match: {params} }) => {
                 entityUuid
               }
             }
-            fieldKlantProject {
+            fieldKlant {
               entity {
                 entityLabel
                 entityId
@@ -46,7 +46,7 @@ const ProjectDetailPage = ({match: {params} }) => {
   if(data) {
     // Converting queryvalues to easy-to-use variables
     const { entities } = data.nodeQuery;
-    const { entityLabel: projectLabel, fieldProjectTasks: projectTasks, fieldKlantProject: projectClient } = entities[0];
+    const { entityLabel: projectLabel, fieldProjectTasks: projectTasks, fieldKlant: projectClient } = entities[0];
 
     return (
       <div className="page projecet-detail-page">
@@ -63,7 +63,7 @@ const ProjectDetailPage = ({match: {params} }) => {
               />
             ))
     
-            : <p>Geen opdrachten...</p>
+            : <p>Geen projecten...</p>
             }
           </div>
         </div>
