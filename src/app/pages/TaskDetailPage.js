@@ -20,8 +20,8 @@ const TaskDetailPage = ({ match: {params} }) => {
           ... on NodeOpdracht {
             title
             fieldTaskDescription
-            fieldOpdrachtGeschatteTijd
-            fieldOpdrachtTotaalTijd
+            fieldTaskEstimatedTime
+            fieldTaskTotalTime
             fieldTaskKlant {
               entity {
                 entityLabel
@@ -51,7 +51,7 @@ const TaskDetailPage = ({ match: {params} }) => {
     const { 
       title,
       fieldTaskDescription,
-      fieldOpdrachtGeschatteTijd: taskEstTime,
+      fieldTaskEstimatedTime: taskEstTime,
       fieldTaskProject: taskProject,
       fieldTaskKlant: taskClient,
     } = entities[0];
