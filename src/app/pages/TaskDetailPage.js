@@ -66,7 +66,7 @@ const TaskDetailPage = ({ match: {params} }) => {
     return (
       <div className="page page-task-detail">
         <PageHeader title={title}/>
-        <div className="container">
+        <div className="container animate__animated animate__slideInRight">
           <div className="buttons-wrapper">
           { taskProject != null ?
             <Link to={`/projecten/${taskProject.entity.entityUuid}`} className="backlink"><i className="fas fa-arrow-circle-left"></i></Link>

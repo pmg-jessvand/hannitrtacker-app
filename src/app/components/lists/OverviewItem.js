@@ -6,7 +6,7 @@ import { Separator } from '../../components'
 const OverviewItem = ({ id, col1, col2, col3 }) => {
   return (
     <Link to={`/klanten/${id}`}>
-      <div className="row overview-item">
+      <div className="row overview-item animate__animated animate__fadeIn">
         <div className="col-4 col-md-4 col-lg-4 col-xl-4 item-col">
           <p>{ col1 }</p>
         </div>

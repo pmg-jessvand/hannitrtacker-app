@@ -1,12 +1,12 @@
 .popup-wrapper {
     position: absolute;
-    top: 300px;
-    right: -5px;
+    bottom: -100px;
+    right: 0px;
     display: flex;
     background-color: $color-white;
     padding: .5rem 1rem;
     border: solid 5px $color-success;
-    border-radius: 90px 0 0 90px;
+    border-radius: 90px;
 
     .popup-message {
         display: flex;

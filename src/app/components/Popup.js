@@ -4,7 +4,7 @@ const Popup = ({ isOpen, handleClose }) => {
   return (
     <>
     {isOpen ?
-      <div className="popup-wrapper">
+      <div className="popup-wrapper animate__animated animate__slideInRight">
         <div className="popup-message">
           <i id="checkmark" className="far fa-check-circle"></i>
           <p>Registratie toegevoegd!</p>

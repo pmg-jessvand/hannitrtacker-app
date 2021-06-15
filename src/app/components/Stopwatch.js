@@ -91,7 +91,6 @@ const Stopwatch = ({ taskId, startValue }) => {
       "id": taskId,
       "input": inputObject
     }});
-    
     setIsOpen(true);
   }
 

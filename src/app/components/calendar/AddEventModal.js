@@ -58,7 +58,7 @@ const AddEventModal = ({ isOpen }) => {
   if(isOpen) {
     return (
       <div className="add-event-modal">
-        <div className="form-container">
+        <div className="form-container animate__animated animate__fadeInUp">
           <h2>Opdracht Toevoegen</h2>
           <form
               onSubmit={ async e => {
