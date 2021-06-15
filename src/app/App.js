@@ -4,7 +4,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 // Components Imports
 import { Header, ScrollToTop } from './components';
-import { HomePage, ClientsPage, ClientDetailPage, ProjectDetailPage, SchedulePage, RegistrationsPage, TaskDetailPage } from './pages';
+import { HomePage, ClientsPage, ClientDetailPage, ProjectDetailPage, SchedulePage, TaskDetailPage } from './pages';
+// Hooks Import
+import { useGetBaseUri } from './hooks';
 // Routes Import
 import * as Routes from './routes';
 
@@ -12,9 +14,10 @@ import * as Routes from './routes';
 
 function App() {
 
+  const baseUri = useGetBaseUri();
+
   const client = new ApolloClient({
-    // uri: 'http://localhost/hannitracker/web/graphql/',
-    uri: 'https://dev-hannitracker.pantheonsite.io/graphql/',
+    uri: `${baseUri}/graphql`,
     cache: new InMemoryCache()
   });
 
@@ -30,7 +33,6 @@ function App() {
             <Route exact path={Routes.CLIENT_DETAIL} component={ClientDetailPage} />
             <Route exact path={Routes.PROJECT_DETAIL} component={ProjectDetailPage} />
             <Route exact path={Routes.SCHEDULE} component={SchedulePage} />
-            <Route exact path={Routes.REGISTRATIONS} component={RegistrationsPage} />
             <Route exact path={Routes.TASK_DETAIL} component={TaskDetailPage} />
           </Switch>
         </Router>

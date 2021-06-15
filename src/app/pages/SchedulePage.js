@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 // Apollo Imports
 import { gql, useQuery } from '@apollo/client';
 // Hooks import 
-// import { useGetEventInfo } from '../hooks';
-// Components Import
-import { CalendarComponent } from '../components';
 import { useGetEventInfo } from '../hooks';
+// Components Import
+import { AddEventButton, AddEventModal, CalendarComponent } from '../components';
 
 const SchedulePage = () => {
 
@@ -35,16 +34,21 @@ const SchedulePage = () => {
     }
   `;
 
+  const [ open, setOpen ] = useState(false);
+
   const { data } = useQuery(TASKS, {
     fetchPolicy: 'cache-first'
   })
 
+  const handleModal = () => {
+    setOpen(!open)
+  }
+
   return (
     <div className="page schedule-page">
-
       <CalendarComponent eventData={ useGetEventInfo(data) }/>
-      <div className="container">
-      </div>
+      <AddEventButton handleClick={handleModal} isModalOpen={open}/>
+      <AddEventModal isOpen={open} />
     </div>
   )
 }

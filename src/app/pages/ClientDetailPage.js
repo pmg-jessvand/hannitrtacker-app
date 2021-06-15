@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // Apollo Imports
 import { gql, useQuery } from '@apollo/client';
 // Component Imports
-import { ClientInfoItem, PageHeader, ProjectList } from '../components';
+import { EditButton, ClientInfoItem, PageHeader, ProjectList } from '../components';
 
 import * as Routes from '../routes';
 
@@ -50,7 +50,6 @@ const ClientsDetailPage = ({match: {params} }) => {
             <div className="row">
               <div className="col-12 col-md-12 col-lg-5 col-xl-5 client-detail-col">
                 <div className="client-info-wrapper">
-
                   <ClientInfoItem slug="id" label="Klant ID" value={nodeById.uuid} />
                   <ClientInfoItem slug="name" label="Naam" value={nodeById.title} />
                   <ClientInfoItem slug="email" label="E-mail" value={nodeById.fieldKlantEmail} />
@@ -62,7 +61,10 @@ const ClientsDetailPage = ({match: {params} }) => {
               </div>
               <div className="col-12 col-md-12 col-lg-5 col-xl-5 client-detail-col">
                 <div className="client-projects-wrapper">
-                  <h2>Projecten</h2>
+                  <div className="client-projects-wrapper-title">
+                    <h2>Projecten</h2>
+                    <EditButton nodeId={params.id}/>
+                  </div>
                   { nodeById.fieldClientProjects.length > 0 ?
                   
                     <ProjectList listdata={nodeById.fieldClientProjects} />

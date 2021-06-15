@@ -7,14 +7,25 @@ export default function useGetEventInfo(data) {
     let eventData = [];
 
     tasks.map(task => {
-      let taskOpbject = {
-        title: task.title,
-        date: task.fieldTaskStartDate.value,
-        slug: `/opdrachten/${task.uuid}`,
-        klant: task.fieldTaskKlant.entity.title,
+
+      if(task.fieldTaskKlant != null) {
+        let taskOpbject = {
+          title: task.title,
+          date: task.fieldTaskStartDate.value,
+          slug: `/opdrachten/${task.uuid}`,
+          klant: task.fieldTaskKlant.entity.title,
+        }
+        return eventData.push(taskOpbject);
+
+      } else {
+        let taskOpbject = {
+          title: task.title,
+          date: task.fieldTaskStartDate.value,
+          slug: `/opdrachten/${task.uuid}`,
+        }
+        return eventData.push(taskOpbject);
       }
 
-      return eventData.push(taskOpbject);
 
     })
 
