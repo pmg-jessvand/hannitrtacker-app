@@ -44,7 +44,7 @@ const ClientsDetailPage = ({match: {params} }) => {
     return (
       <div className="page clients-page">
         <PageHeader title={nodeById.title} />
-        <div className="container">
+        <div className="container animate__animated animate__slideInRight">
           <Link to={Routes.CLIENTS} className="backlink" ><i className="fas fa-arrow-circle-left"></i></Link>
           {data ?
             <div className="row">

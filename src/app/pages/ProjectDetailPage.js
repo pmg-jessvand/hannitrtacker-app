@@ -52,7 +52,7 @@ const ProjectDetailPage = ({match: {params} }) => {
     return (
       <div className="page project-detail-page">
         <PageHeader title={`${projectClient.entity.entityLabel} - ${projectLabel} `} />
-        <div className="container">
+        <div className="container animate__animated animate__slideInRight">
           <div className="buttons-wrapper">
             <Link to={`/klanten/${projectClient.entity.entityId}`} className="backlink" ><i className="fas fa-arrow-circle-left"></i></Link>
             <EditButton nodeId={projectId} label="Project bewerken" />

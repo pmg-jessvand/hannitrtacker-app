@@ -1,6 +1,4 @@
 import React from 'react'
-// Apollo Imports
-// import { gql, useQuery } from '@apollo/client';
 // Components Imports
 
 // Assets Imports
@@ -11,12 +9,12 @@ const HomePage = () => {
   return (
     <div className="page home-page">
       <div className="container">
-        <div className="welcome-container">
+        <div className="welcome-container animate__animated animate__fadeInUp">
           <div className="image-wrapper">
             <img src={ Logo } alt="hannitracker-logo" />
           </div>
           <div className="text-wrapper">
-            <h2>Welcome</h2>
+            <h2>Welkom</h2>
           </div>
         </div>
       </div>
