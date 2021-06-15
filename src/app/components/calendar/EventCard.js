@@ -4,7 +4,7 @@ const EventCard = ({ title, klant }) => {
   return (
     // <Link className="event-card-link" to={`/opdrachten/${id}`}>
       <div className="event-card">
-        <p className="event-client">{klant}</p>
+        { klant !=null ? <p className="event-client">{klant}</p> : null }
         <p>{title}</p>
       </div>
     // </Link> 

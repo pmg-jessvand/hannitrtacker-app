@@ -2,7 +2,7 @@ import React from 'react'
 // Apollo Imports
 import { gql, useQuery } from '@apollo/client';
 // Component Imports
-import { Overview } from '../components';
+import { Overview, PageHeader } from '../components';
 
 const CLIENTS = gql `
   query {
@@ -31,8 +31,8 @@ const ClientsPage = () => {
 
   return (
     <div className="page clients-page">
+      <PageHeader title="Klanten" />
       <div className="container">
-        <h1>Klanten</h1>
         {data ? 
 
           <div className="client-overview-container">

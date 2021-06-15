@@ -16,7 +16,7 @@ const HomePage = () => {
             <img src={ Logo } alt="hannitracker-logo" />
           </div>
           <div className="text-wrapper">
-            <h2>Welcome [User]</h2>
+            <h2>Welcome</h2>
           </div>
         </div>
       </div>

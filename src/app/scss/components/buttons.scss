@@ -1,0 +1,76 @@
+.button-primary {
+    text-decoration: none;
+    background-color: $color-black;
+    color: $color-white;
+    padding: .5rem 1rem;
+    border-radius: 90px;
+
+    &:hover {
+        background-color: $main-color;
+        color: $color-black;
+        transition: $transition;
+    }
+    
+}
+
+.button-registrate {
+    background-color: $color-black;
+    color: $color-white;
+    border-radius: 90px;
+    border: none;
+    outline: none;
+    padding: .5rem 1rem;
+
+    &:hover {
+        background-color: $main-color;
+        color: $color-black;
+    }
+}
+
+.edit-button {
+    text-decoration: none;
+    color: $main-color;
+    font-size: 24px;
+
+    i {
+        padding: 0 .5rem;
+    }
+
+    &:hover {
+        color: $color-black;
+        transition: $transition;
+    }
+}
+
+.buttons-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-event-button {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 99;
+    color: $main-color;
+    font-size: 40px;
+
+    &:hover {
+        color: $color-black;
+        transition: $transition;
+    }
+}
+
+.submit-button {
+    background-color: $main-color;
+    padding: .5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 90px;
+
+    &:hover {
+        background-color: $color-black;
+        color: $color-white;
+    }
+}

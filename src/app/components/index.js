@@ -1,8 +1,12 @@
+import EditButton from './EditButton';
 import Header from './Header';
 import PageHeader from './PageHeader';
+import Popup from './Popup';
 import ScrollToTop from './ScrollToTop';
 import Stopwatch from './Stopwatch';
 // Calendar Components
+import AddEventButton from './calendar/AddEventButton';
+import AddEventModal from './calendar/AddEventModal';
 import CalendarComponent from './calendar/Calendar';
 import EventCard from './calendar/EventCard';
 // List Components
@@ -19,11 +23,15 @@ import DesktopNavigation from './navigation/DesktopNavigation';
 import MobileNavigation from './navigation/MobileNavigation';
 
 export {
+  EditButton,
   Header,
   PageHeader,
+  Popup,
   ScrollToTop,
   Stopwatch,
   // Calendar Componensts
+  AddEventButton,
+  AddEventModal,
   CalendarComponent,
   EventCard,
   // List Components

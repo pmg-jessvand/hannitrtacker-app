@@ -1,0 +1,39 @@
+.popup-wrapper {
+    position: absolute;
+    top: 300px;
+    right: -5px;
+    display: flex;
+    background-color: $color-white;
+    padding: .5rem 1rem;
+    border: solid 5px $color-success;
+    border-radius: 90px 0 0 90px;
+
+    .popup-message {
+        display: flex;
+        align-items: center;
+        margin-right: 5px;
+
+        #checkmark {
+            padding: .5rem;
+            font-size: 24px;
+            color: $color-success;
+        }
+
+         p {
+             margin: 0px;
+         }
+    }
+
+    .popup-button {
+        display: flex;
+        align-items: center;
+
+        button {
+            border: none;
+            padding: .1rem .5rem;
+            background-color: transparent;
+            font-size: 20px;
+            font-weight: 300;
+        }
+    }
+}

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // Apollo Import
 import { gql, useQuery } from '@apollo/client';
 // Components Import
-import { PageHeader, Stopwatch } from '../components';
+import { EditButton, PageHeader, Stopwatch } from '../components';
 
 const TaskDetailPage = ({ match: {params} }) => {
 
@@ -18,6 +18,7 @@ const TaskDetailPage = ({ match: {params} }) => {
       }) {
         entities {
           ... on NodeOpdracht {
+            entityId
             title
             fieldTaskDescription
             fieldTaskEstimatedTime
@@ -45,32 +46,50 @@ const TaskDetailPage = ({ match: {params} }) => {
   });
 
   if(data) {
-
     // Converting queryvalues to easy-to-use variables
     const { entities } = data.nodeQuery;
-    const { 
+    const {
+      entityId, 
       title,
       fieldTaskDescription,
       fieldTaskEstimatedTime: taskEstTime,
+      fieldTaskTotalTime: totalTime,
       fieldTaskProject: taskProject,
       fieldTaskKlant: taskClient,
     } = entities[0];
+
+    // Convert time in minutes from backend to time in seconds for timer
+    const getTimerValue = (value) => {
+      return value * 60;
+    }
 
     return (
       <div className="page page-task-detail">
         <PageHeader title={title}/>
         <div className="container">
-          <Link to={`/projecten/${taskProject.entity.entityUuid}`} className="backlink"><i className="fas fa-arrow-circle-left"></i></Link>
+          <div className="buttons-wrapper">
+          { taskProject != null ?
+            <Link to={`/projecten/${taskProject.entity.entityUuid}`} className="backlink"><i className="fas fa-arrow-circle-left"></i></Link>
+            : <Link to={`/klanten`} className="backlink"><i className="fas fa-arrow-circle-left"></i></Link>
+          }
+            <EditButton nodeId={entityId} label="Opdracht bewerken" />
+          </div>
           <div className="row">
             <div className="col-12 col-md-12 col-lg-6 col-xl-6">
               <div className="tasks-wrapper">
                 <div className="task-item">
                   <i className="fas fa-user"></i>
-                  <p>{taskClient.entity.entityLabel}</p>
+                  { taskClient != null ?
+                    <p>{taskClient.entity.entityLabel}</p>
+                    : <EditButton nodeId={entityId} label="Voeg klant toe" />
+                  }
                 </div>
                 <div className="task-item">
                   <i className="fas fa-clipboard-list"></i>
-                  <p>{taskProject.entity.entityLabel}</p>
+                  { taskProject != null ?
+                    <p>{taskProject.entity.entityLabel}</p>
+                    : <EditButton nodeId={entityId} label="Voeg project toe" />
+                  }
                 </div>
                 <div className="task-item">
                   <i className="fas fa-user-clock"></i>
@@ -83,7 +102,7 @@ const TaskDetailPage = ({ match: {params} }) => {
               </div>
             </div>
             <div className="col-12 col-md-12 col-lg-6 col-xl-6">
-              <Stopwatch />
+              <Stopwatch taskId={entityId} startValue={getTimerValue(totalTime)} />
             </div>
           </div>
         </div>

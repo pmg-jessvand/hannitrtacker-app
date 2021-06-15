@@ -12,35 +12,37 @@ const CalendarComponent = ({ eventData }) => {
     window.location.href=eventInfo.event.extendedProps.slug;
   }
 
-  const handleNavClick = (info) => {
-    alert(info)
-  }
-
   const renderEventContent = (eventContent) => {
     return (
       <EventCard
-      id={eventContent.event._def.defId}
-      title={eventContent.event.title}
-      klant={eventContent.event.extendedProps.klant}/>
+        id={eventContent.event._def.defId}
+        title={eventContent.event.title}
+        klant={eventContent.event.extendedProps.klant}
+      />
     );
   }
 
   return (
     <div className="calendar">
+    { eventData ? 
       <FullCalendar
-        plugins={[ dayGridPlugin, interactionPlugin ]}
-        initialView="dayGridWeek"
-        weekends={false}
-        buttonText={{
-          today: 'Vandaag',
-        }}
-        locale="be"
-        navLinks={true}
-        navLinkDayClick={handleNavClick}
-        events={eventData}
-        eventClick={handleEventClick}
-        eventContent={renderEventContent}
+      plugins={[ dayGridPlugin, interactionPlugin ]}
+      initialView="dayGridWeek"
+      weekends={false}
+      buttonText={{
+        today: 'Vandaag',
+      }}
+      locale="be"
+      navLinks={true}
+      events={eventData}
+      eventClick={handleEventClick}
+      eventContent={renderEventContent}
       />
+      :
+      <div className="container">
+        <p>Planning laden...</p>
+      </div>
+    }
     </div>
   )
 }

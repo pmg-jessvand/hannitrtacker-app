@@ -1,9 +1,12 @@
+@import "./buttons.scss";
 @import "./header.scss";
 @import "./page-header.scss";
+@import "./pop-up.scss";
 @import "./backlink.scss";
 @import "./stopwatch.scss";
 
 // Calendar
+@import "./calendar/add-event-modal.scss";
 @import "./calendar/calendar.scss";
 @import "./calendar/eventCard.scss";
 

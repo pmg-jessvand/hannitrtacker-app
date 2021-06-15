@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 // Apollo Import
 import { gql, useQuery } from '@apollo/client';
 // Components Import
-import { PageHeader, ProjectListItem } from '../components';
+import { EditButton, PageHeader, ProjectListItem } from '../components';
 
 const ProjectDetailPage = ({match: {params} }) => {
 
@@ -18,6 +18,7 @@ const ProjectDetailPage = ({match: {params} }) => {
       }) {
         entities {
           entityLabel
+          entityId
           ... on NodeProject {
             fieldProjectTasks {
               entity {
@@ -46,13 +47,16 @@ const ProjectDetailPage = ({match: {params} }) => {
   if(data) {
     // Converting queryvalues to easy-to-use variables
     const { entities } = data.nodeQuery;
-    const { entityLabel: projectLabel, fieldProjectTasks: projectTasks, fieldKlant: projectClient } = entities[0];
+    const { entityLabel: projectLabel, entityId: projectId, fieldProjectTasks: projectTasks, fieldKlant: projectClient } = entities[0];
 
     return (
-      <div className="page projecet-detail-page">
+      <div className="page project-detail-page">
         <PageHeader title={`${projectClient.entity.entityLabel} - ${projectLabel} `} />
         <div className="container">
-          <Link to={`/klanten/${projectClient.entity.entityId}`} className="backlink" ><i className="fas fa-arrow-circle-left"></i></Link>
+          <div className="buttons-wrapper">
+            <Link to={`/klanten/${projectClient.entity.entityId}`} className="backlink" ><i className="fas fa-arrow-circle-left"></i></Link>
+            <EditButton nodeId={projectId} label="Project bewerken" />
+          </div>
           <div className="project-detail-tasklist">
             {projectTasks.length > 0 ? projectTasks.map(task => (
               <ProjectListItem
